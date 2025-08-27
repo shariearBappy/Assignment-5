@@ -63,6 +63,15 @@ getElement("forClick").addEventListener("click", (e) => {
     callHistory.style.display = "block";
   }
 });
+// copy alert
+getElement("forClick").addEventListener("click", (e) => {
+  if (e.target.matches(".copyBtn")) {
+    const selectCard = e.target.closest(".card");
+    const selectElement = selectCard.querySelector(".card-num").innerText;
+    const copyNum = navigator.clipboard.writeText(selectElement);
+    alert("Number Copied :" + " " + selectElement, copyNum);
+  }
+});
 // copy button increasing
 getElement("forClick").addEventListener("click", (e) => {
   if (e.target.matches(".copyBtn")) {
