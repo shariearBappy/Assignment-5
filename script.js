@@ -63,3 +63,12 @@ getElement("forClick").addEventListener("click", (e) => {
     callHistory.style.display = "block";
   }
 });
+// copy button increasing
+getElement("forClick").addEventListener("click", (e) => {
+  if (e.target.matches(".copyBtn")) {
+    const copyText = getElement("copyCount").innerText;
+    const textToNumber = Number(copyText);
+    const totalCount = textToNumber + 1;
+    document.getElementById("copyCount").innerText = totalCount;
+  }
+});
